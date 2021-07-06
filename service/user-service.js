@@ -5,6 +5,7 @@ const mailService = require('./mail-service');
 const tokenService = require('./token-service');
 const UserDto = require('../dtos/user-dto');
 const ApiError = require('../exceptions/api-error');
+const PostModel = require('../moduls/post-modul');
 
 class UserService {
     async registration(email, password){
@@ -79,6 +80,10 @@ class UserService {
     async getAllUsers(){
         const users = await UserModel.find();
         return users;
+    }
+    async getAllPost(){
+        const post = await PostModel.find();
+        return post;
     }
 }
 

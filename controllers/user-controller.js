@@ -70,6 +70,16 @@ class UserController{
             }
         
     }
+    async getPost(req, res, next){
+        try{
+            const post = await userService.getAllPost();
+            return res.json(post);
+        }catch(e){
+            next(e);
+        }
+
+    }
+
 }
 
 
